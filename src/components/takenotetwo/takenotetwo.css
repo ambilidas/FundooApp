@@ -1,0 +1,58 @@
+.MainDiv {
+    width: 40vw;
+    height: 20vh;
+    border: 1px solid grey;
+    margin: auto;
+    position: relative;
+    top: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.subDiv {
+    width: 95%;
+    height: 30%;
+    
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.subDiv1 {
+    width: 95%;
+    height: 30%;
+}
+#text-two {
+    width: 100%;
+    height: 100%;
+    border: none;
+    outline: none;
+}
+#text-one {
+    width: 60%;
+    outline: none;
+    border: none;
+}
+.subDiv2 {
+    width: 95%;
+    height: 30%;
+   
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.pic {
+    width: 15px;
+    height: 15px;
+}
+
+.imgBlock1 {
+    width: 60%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+#btn {
+    border: none;
+    
+}

@@ -1,0 +1,24 @@
+.maindiv-dashboard {
+    width: 100vw;
+    height: 150vh;
+    display: flex;
+    flex-direction: column;
+    
+}
+.subDiv-takenote2 {
+   
+    margin-bottom: 250px;
+}
+.takenote3 {
+    width: 70vw;
+   margin: auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    
+    position: relative;
+    left: 50px;
+    bottom: 50px;
+    
+}

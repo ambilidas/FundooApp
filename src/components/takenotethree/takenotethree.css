@@ -1,0 +1,39 @@
+
+.main-box-note3 {
+    width: 15vw;
+    min-height: 50px;
+    max-height: 200px;
+    border: 1px solid grey;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin:20px;
+}
+.title-box-note3 {
+    width: 90%;
+    height: 25px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-size: medium;
+
+}
+
+
+.description-box {
+    width: 90%;
+    min-height: 50px;
+    max-height: 200px;
+   font-size: large;
+   text-align: left;
+    
+}
+.image-block-note3 {
+    width: 100%;
+    height: 25px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+   
+    align-items: center;
+}
