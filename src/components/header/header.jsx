@@ -9,11 +9,11 @@ import img6 from './images/settings.jpg'
 import img7 from './images/appsicon.png'
 import img8 from './images/accounticon.png'
 import img9 from './images/searchicon.jpg'
-function Header() {
+function Header(props) {
   return (
     <div className='mainBox'>
         <div className='subBox1'>
-            <img className='img1' src={img1}  />
+            <img className='img1' src={img1} onClick={props.listenToHeader} />
             <img className='img1' src={img2}  />
             <img className='img1' src={img3}  />
         </div>

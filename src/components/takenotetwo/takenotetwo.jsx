@@ -24,10 +24,13 @@ function Takenotetwo(props) {
       setTakeNote2Obj((prevState) => ({...prevState,description: event.target.value}));
     }
     const submit = () => {
-      props.takeNoteTwo();
+      
       addNote(takeNote2Obj)
-      .then((resp) => {console.log(resp)})
+      
+      .then((resp) => {console.log(resp);props.takeNoteTwo();})
+      
       .catch((error) => {console.log(error)})
+
     }
 
     const takeColor = (color) => {

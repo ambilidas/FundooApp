@@ -20,13 +20,11 @@ function Takenotethree(props) {
     UpdateArchive(data).then((response) =>console.log(response))
     .catch((error) => console.log(error))
   }
-  const showIcons = () => {
-
-  }
+  
 
   return (
    
-        <div className='main-box-note3' onMouseOver={showIcons} style={{backgroundColor:props.note.color}}>
+        <div className='main-box-note3' style={{backgroundColor:props.note.color}}>
             <div className='title-box-note3'>
                 <div className='title-note3'>{props.note.title}</div>
                
