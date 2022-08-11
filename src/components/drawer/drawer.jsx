@@ -92,7 +92,7 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
   }),
 );
 
-export default function SideDrawer({open}) {
+export default function SideDrawer({open,listenToSideNav}) {
   const theme = useTheme();
  
 
@@ -112,6 +112,7 @@ export default function SideDrawer({open}) {
                   justifyContent: open ? 'initial' : 'center',
                   px: 2.5,
                 }}
+                onClick={() => listenToSideNav('notes')}
               >
                 <ListItemIcon
                   sx={{
@@ -175,6 +176,8 @@ export default function SideDrawer({open}) {
                   justifyContent: open ? 'initial' : 'center',
                   px: 2.5,
                 }}
+                onClick={() => {listenToSideNav('archive')}}
+           
               >
                 <ListItemIcon
                   sx={{
@@ -196,6 +199,7 @@ export default function SideDrawer({open}) {
                   justifyContent: open ? 'initial' : 'center',
                   px: 2.5,
                 }}
+                onClick={() => listenToSideNav('trash')}
               >
                 <ListItemIcon
                   sx={{

@@ -8,9 +8,33 @@ import ImageOutlinedIcon from '@mui/icons-material/ImageOutlined';
 import ArchiveOutlinedIcon from '@mui/icons-material/ArchiveOutlined';
 import MoreVertOutlinedIcon from '@mui/icons-material/MoreVertOutlined';
 import ColorPopper from '../colorPopper/ColorPopper'
-import { UpdateArchive } from '../../services/Dataservice'
+import { UpdateArchive , updateEditNotes,UpdateTrash } from '../../services/Dataservice'
+import Box from '@mui/material/Box';
+import Button from '@mui/material/Button';
+import Typography from '@mui/material/Typography';
+import Modal from '@mui/material/Modal';
+import { useState } from 'react';
+import img8 from '../takenotetwo/images/undo.png'
+import img9 from '../takenotetwo/images/redo.png'
+import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
+
+
+const style = {
+  position: 'absolute',
+  top: '50%',
+  left: '50%',
+  transform: 'translate(-50%, -50%)',
+  width: 400,
+  bgcolor: 'background.paper',
+  border: '2px solid #000',
+  boxShadow: 24,
+  p: 4,
+};
 
 function Takenotethree(props) {
+
+  const [open, setOpen] = React.useState(false);
+  const [editNotes,setEditNotes] = useState({});
 
   const updateArchive = () => {
     let data= {
@@ -20,17 +44,55 @@ function Takenotethree(props) {
     UpdateArchive(data).then((response) =>console.log(response))
     .catch((error) => console.log(error))
   }
+
+  const updateTrash = () => {
+    let data1 = {
+      noteIdList:[props.note.id],
+      isDeleted:false
+    }
+    UpdateTrash(data1).then((response) =>console.log(response))
+    .catch((error) => console.log(error))
+  }
   
+  const handleOpen = (note) => {
+    console.log(note)
+    setEditNotes(note)
+    setOpen(true);
+    
+  } 
+  const handleClose = () => setOpen(false);
+
+  const takeTitleEditNotes = (event) => {
+    setEditNotes((prevState) => ({...prevState,title: event.target.value}));
+  }
+  const takeDescriptionEditNotes = (event) => {
+    setEditNotes((prevState) => ({...prevState,description: event.target.value}));
+  }
+
+  const Submit = () => {
+    let obj= {
+      noteId:editNotes.id,
+      title:editNotes.title,
+      description:editNotes.description
+    }
+     updateEditNotes(obj)
+      
+      .then((resp) => {console.log(resp)})
+      
+      .catch((error) => {console.log(error)})
+     
+
+  }
 
   return (
    
         <div className='main-box-note3' style={{backgroundColor:props.note.color}}>
-            <div className='title-box-note3'>
+            <div className='title-box-note3' onClick={() => handleOpen(props.note)}>
                 <div className='title-note3'>{props.note.title}</div>
                
                 <PushPinTwoToneIcon/>
             </div>
-            <div className='description-box'>{props.note.description}</div>
+            <div className='description-box' onClick={() => handleOpen(props.note)}>{props.note.description}</div>
             <div className='image-block-note3'>
                 <AddAlertIcon />
                
@@ -40,8 +102,42 @@ function Takenotethree(props) {
                 <ImageOutlinedIcon />
                 <ArchiveOutlinedIcon  onClick={updateArchive} />
                 <MoreVertOutlinedIcon />
+                <DeleteOutlineIcon onClick={updateTrash} />
             </div>
-        </div>
+
+        <Modal
+          open={open}
+          onClose={handleClose}
+          aria-labelledby="modal-modal-title"
+          aria-describedby="modal-modal-description"
+        >
+          <Box sx={style}>
+            <Typography id="modal-modal-title" variant="h6" component="h2">
+            <input className='editnote-text' type='text' value={editNotes.title} onChange={takeTitleEditNotes} />
+            </Typography>
+            <Typography id="modal-modal-description" sx={{ mt: 2 }}>
+            <input className='editnote-text' type='text' value={editNotes.description} onChange={takeDescriptionEditNotes} />
+            </Typography>
+            <div className='icons-editnote'>
+              <div className='subdiv-icons'>
+              <AddAlertIcon />
+              <GroupAddOutlinedIcon />
+              <ColorPopper  />
+              <ImageOutlinedIcon />
+                        
+              <ArchiveOutlinedIcon />
+              <MoreVertOutlinedIcon />
+              <img className='pic' src={img8} />
+              <img className='pic' src={img9} />
+            </div>
+              
+              <Button onClick={Submit}>Close</Button>
+            </div>
+           </Box> 
+         
+        
+        </Modal>
+      </div>
    
   )
 }

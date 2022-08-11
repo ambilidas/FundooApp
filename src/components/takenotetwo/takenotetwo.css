@@ -4,7 +4,8 @@
     border: 1px solid grey;
     margin: auto;
     position: relative;
-    top: 100px;
+    top: 90px;
+    left: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;

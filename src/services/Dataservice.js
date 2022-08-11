@@ -26,3 +26,11 @@ export const UpdateArchive = (updatearchiveObj) => {
     let response = axios.post('http://fundoonotes.incubation.bridgelabz.com/api/notes/archiveNotes',updatearchiveObj,headerConfig)
     return response;
 }
+export const updateEditNotes = (updateEditnoteobj) => {
+    let response = axios.post('http://fundoonotes.incubation.bridgelabz.com/api/notes/updateNotes',updateEditnoteobj,headerConfig)
+    return response;
+}
+export const UpdateTrash = (updatetrashObj) => {
+    let response = axios.post('http://fundoonotes.incubation.bridgelabz.com/api/notes/trashNotes',updatetrashObj,headerConfig)
+    return response;
+}

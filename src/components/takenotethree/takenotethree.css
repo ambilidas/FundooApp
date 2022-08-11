@@ -1,10 +1,11 @@
 
 .main-box-note3 {
-    width: 15vw;
+    width: 18vw;
     min-height: 50px;
     max-height: 200px;
     border: 1px solid grey;
     display: flex;
+    flex-wrap: wrap;
     flex-direction: column;
     align-items: center;
     margin:20px;
@@ -36,4 +37,24 @@
     justify-content: space-around;
    
     align-items: center;
+}
+
+.editnote-text {
+    border: none;
+    outline: none;
+}
+.icons-editnote {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    
+    position: relative;
+    top: 10px;
+}
+.subdiv-icons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    
+    width: 70%;
 }

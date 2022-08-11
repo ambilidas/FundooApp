@@ -6,23 +6,49 @@ import Takenotethree from '../../components/takenotethree/takenotethree'
 import { getNotes } from '../../services/Dataservice'
 import './Dashboard.css'
 import SideDrawer from '../../components/drawer/drawer'
+import { useState } from 'react'
 
 function Dashboard() {
   const [notes,setNotes] = React.useState([])
   const [view,setView] = React.useState([true])
   const [open, setOpen] = React.useState(false);
+  const [noteType,setNoteType] = useState('notes')
   
   const GetNotes= () => {
     
     getNotes().then((response)=>{
       console.log(response)
+      const filterArray = response.data.data.data.filter((note) => {
+        if(noteType === 'notes') {
+
+       
+        if(note.isArchived === false && note.isDeleted === false){
+          return note;
+        }
+      }
+      if(noteType === 'archive'){
+
+      
+        if(note.isArchived === true && note.isDeleted === false){
+          return note;
+        }
+      }
+      if(noteType === 'trash') {
+
      
-     setNotes(response.data.data.data)
+        if(note.isArchived === false && note.isDeleted === true){
+          return note;
+        }
+      }
+      })
+     
+     
+     setNotes(filterArray)
     })
     
     
   }
-  React.useEffect(() => {GetNotes()}, [])
+  React.useEffect(() => {GetNotes()}, [noteType])
     
 
   // console.log(notes)
@@ -37,13 +63,16 @@ function Dashboard() {
   const listenToHeader = () => {
     setOpen(!open)
   }
+  const listenToSideNav = (value) => {
+    setNoteType(value)
+  }
 
   const mapNotes = notes.map((note,index) => <Takenotethree key={index} note={note} />)
 
    return (
     <div className='maindiv-dashboard'>
-        <div><Header listenToHeader={listenToHeader} /></div>
-        <SideDrawer open={open} />
+        <div className='dashboard-header'><Header listenToHeader={listenToHeader} /></div>
+        <SideDrawer open={open} listenToSideNav={listenToSideNav} />
         <div>
            {view ? <div className='subDiv-takenote2'><Takenoteone takeNoteOne={takeNoteOne}/></div> : <div className='subDiv-takenote2'><Takenotetwo takeNoteTwo={takeNoteTwo}/></div>}
         </div>

@@ -15,7 +15,7 @@ import { ClickAwayListener } from '@mui/material'
 
 
 function Takenotetwo(props) {
-    const[takeNote2Obj, setTakeNote2Obj] = useState({title: '', description: '',color: '',isArchived: 'false'});
+    const[takeNote2Obj, setTakeNote2Obj] = useState({title: '', description: '',color: '',isArchived: false});
 
     const takeTitle = (event) => {
       setTakeNote2Obj((prevState) => ({...prevState,title: event.target.value}));
@@ -24,10 +24,10 @@ function Takenotetwo(props) {
       setTakeNote2Obj((prevState) => ({...prevState,description: event.target.value}));
     }
     const submit = () => {
-      
+      props.takeNoteTwo();
       addNote(takeNote2Obj)
       
-      .then((resp) => {console.log(resp);props.takeNoteTwo();})
+      .then((resp) => {console.log(resp)})
       
       .catch((error) => {console.log(error)})
 

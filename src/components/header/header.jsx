@@ -17,8 +17,9 @@ function Header(props) {
             <img className='img1' src={img2}  />
             <img className='img1' src={img3}  />
         </div>
+        
         <div className='subBox2'>
-             <img className='img' src={img9}  />
+            <img className='img' src={img9}  />
             <input id='textarea' type="text" placeholder='Search' />
             
         </div>
@@ -31,6 +32,7 @@ function Header(props) {
             <img className='img1' src={img7}  />
             <img className='img1' src={img8}  />
         </div>
+        
     </div>
   )
 }
