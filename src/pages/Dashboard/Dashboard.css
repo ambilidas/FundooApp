@@ -1,106 +1,122 @@
 .maindiv-dashboard {
     width: 100vw;
-    height: 150vh;
+   min-height: 100vh;
+   max-height: 200vh;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     
+}
+.subDiv-takenote1 {
+   width: 50%;
+    margin: auto;
+   
+   position: relative;
+   top: 20px;
 }
 .subDiv-takenote2 {
    
-    margin-bottom: 250px;
+    width: 50%;
+    margin: auto;
+    position: relative;
+    top: 30px;
+    
 }
 
 .takenote3 {
-    width: 80vw;
+    width: 70%;
+   
     margin: auto;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
-    position: relative;
-    bottom: 150px;
-    left: 50px;
+   
+    
+   
     
     
 }
+.dashboard-header {
+    width: 100%;
+}
 @media screen and (min-width: 320px) and (max-width: 600px) {
  
-    .mainBox {
-        width: fit-content;
-        
-    }
+   /* header classes */
     .subBox2 {
         display: none;
     }
     .subBox1 {
        
-        width: 50%;
+        width: 40%;
         margin-left: 20px;
         gap: 5px;
     }
     .subBox3 {
         width: 25%;
         padding-right: 20px;
-        justify-content: space-between;
-        gap: 5px;
-    }
-    .subBox4 {
-        width: 25%;
-        padding-right: 20px;
-        justify-content: space-between;
-        gap: 5px;
-    }
-    /* takenoteone */
-    .mainDiv {
-        width: 80vw;
         
+        gap: 5px;
+    } 
+    .subBox4 {
+        width: 10%;
+        
+        
+       
+    }
+
+    .mainDiv {
+        width: 100%;
+
+    }
+    .MainDiv {
+        width: 100%;
+    }
+    #btn {
+        position: relative;
+        top: 15px;
     }
     .main-box-note3 {
         width: 90vw;
     }
-    /* takenote2 */
-    .MainDiv {
-        width: 80vw;
+   
+    
+    .takenote3 {
+        margin-top: 25px;
     }
-    /* .img {
-        height: 30px;
-        width: 30px;
-    }
-    .img1 {
-        height: 20px;
-        width: 20px;
-    } */
+   
+   
 }
 @media screen and (min-width: 601px) and (max-width: 860px) {
     .subBox2 {
         display: none;
     }
     .subBox1 {
-        width: 80%;
+        width: 35%;
         
         
     }
     .subBox3 {
-        width: 80%;
+        width: 30%;
         
         
     }
     .subBox4 {
-        width: 70%;
+        width: 15%;
         
         
     }
     .mainDiv {
-        width: 80vw;
+        width: 80%;
 
     }
     .main-box-note3 {
         width: 30vw;
     }
     .MainDiv {
-        width: 80vw;
+        width: 100%
     }
-}
-@media screen and (min-width: 861px) and (max-width: 1024px) {
-
+    .takenote3 {
+        margin-top: 25px;
+    }
 }

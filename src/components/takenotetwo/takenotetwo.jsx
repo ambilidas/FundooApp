@@ -27,7 +27,7 @@ function Takenotetwo(props) {
       props.takeNoteTwo();
       addNote(takeNote2Obj)
       
-      .then((resp) => {console.log(resp)})
+      .then((resp) => {props.getNotes()})
       
       .catch((error) => {console.log(error)})
 

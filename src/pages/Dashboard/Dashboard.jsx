@@ -67,14 +67,14 @@ function Dashboard() {
     setNoteType(value)
   }
 
-  const mapNotes = notes.map((note,index) => <Takenotethree key={index} note={note} />)
+  const mapNotes = notes.map((note,index) => <Takenotethree key={index} note={note} getNotes={GetNotes} />)
 
    return (
     <div className='maindiv-dashboard'>
         <div className='dashboard-header'><Header listenToHeader={listenToHeader} /></div>
         <SideDrawer open={open} listenToSideNav={listenToSideNav} />
         <div>
-           {view ? <div className='subDiv-takenote2'><Takenoteone takeNoteOne={takeNoteOne}/></div> : <div className='subDiv-takenote2'><Takenotetwo takeNoteTwo={takeNoteTwo}/></div>}
+           {view ? <div className='subDiv-takenote1'><Takenoteone takeNoteOne={takeNoteOne}/></div> : <div className='subDiv-takenote2'><Takenotetwo getNotes={GetNotes} takeNoteTwo={takeNoteTwo}/></div>}
         </div>
         <div className='takenote3'>{mapNotes}</div>
     </div>

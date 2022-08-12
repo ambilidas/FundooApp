@@ -3,9 +3,6 @@
     height: 20vh;
     border: 1px solid grey;
     margin: auto;
-    position: relative;
-    top: 90px;
-    left: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -45,6 +42,8 @@
 .pic {
     width: 15px;
     height: 15px;
+    position: relative;
+    top: 5px;
 }
 
 .imgBlock1 {

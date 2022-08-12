@@ -41,16 +41,16 @@ function Takenotethree(props) {
       noteIdList:[props.note.id],
       isArchived:true
     }
-    UpdateArchive(data).then((response) =>console.log(response))
+    UpdateArchive(data).then((response) =>props.getNotes())
     .catch((error) => console.log(error))
   }
 
   const updateTrash = () => {
     let data1 = {
       noteIdList:[props.note.id],
-      isDeleted:false
+      isDeleted:true
     }
-    UpdateTrash(data1).then((response) =>console.log(response))
+    UpdateTrash(data1).then((response) =>props.getNotes())
     .catch((error) => console.log(error))
   }
   
@@ -98,7 +98,7 @@ function Takenotethree(props) {
                
                 <GroupAddOutlinedIcon />
                 
-                <ColorPopper action="update" id={props.note.id}/>
+                <ColorPopper action="update" id={props.note.id} getNotes={props.getNotes}/>
                 <ImageOutlinedIcon />
                 <ArchiveOutlinedIcon  onClick={updateArchive} />
                 <MoreVertOutlinedIcon />

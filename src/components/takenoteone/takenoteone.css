@@ -1,14 +1,13 @@
 .mainDiv {
-    width: 40vw;
+    width: 70%;
     height: 6vh;
     border:1px solid grey;
     
     margin: auto;
     display: flex;
     justify-content: space-between;
-    position: relative;
-    left: 30px;
-    margin-top: 50px;
+   
+   
     
 }
 .image {

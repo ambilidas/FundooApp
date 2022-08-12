@@ -12,6 +12,7 @@ export default function ColorPopper(props) {
   const handleClick = (event) => {
     setAnchorEl(anchorEl ? null : event.currentTarget);
   };
+  
   const takeColor = (color) => {
     if(props.action==="create"){
       props.takeColor(color)
@@ -21,7 +22,7 @@ export default function ColorPopper(props) {
         noteIdList:[props.id],
         color:color
       }
-      updateColour(data).then((response) =>console.log(response))
+      updateColour(data).then((response) =>props.getNotes())
       .catch((error) => console.log(error))
     }
     
