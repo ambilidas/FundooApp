@@ -10,7 +10,7 @@ import { useState } from 'react'
 
 function Dashboard() {
   const [notes,setNotes] = React.useState([])
-  const [view,setView] = React.useState([true])
+  const [view,setView] = React.useState(true)
   const [open, setOpen] = React.useState(false);
   const [noteType,setNoteType] = useState('notes')
   
@@ -51,7 +51,7 @@ function Dashboard() {
   React.useEffect(() => {GetNotes()}, [noteType])
     
 
-  // console.log(notes)
+  
   const takeNoteOne = () => {
       setView(!view)
   }

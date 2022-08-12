@@ -65,4 +65,52 @@
     padding-left: 20px;
     
 }
+@media screen and (min-width: 320px) and (max-width: 600px) {
+    
+    .subBox2 {
+        display: none;
+    }
+    .subBox1 {
+       
+        width: 40%;
+        margin-left: 20px;
+        gap: 5px;
+    }
+    .subBox3 {
+        width: 25%;
+        padding-right: 20px;
+        
+        gap: 5px;
+    } 
+    .subBox4 {
+        width: 10%;
+        
+        
+       
+    }
+
+}
+@media screen and (min-width: 601px) and (max-width: 860px) {
+    .subBox2 {
+        display: none;
+    }
+    .subBox1 {
+        width: 35%;
+        
+        
+    }
+    .subBox3 {
+        width: 30%;
+        
+        
+    }
+    .subBox4 {
+        width: 15%;
+        
+        
+    }
+}
+@media screen and (min-width: 861px) and (max-width: 1024) {
+    
+}
 

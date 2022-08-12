@@ -117,7 +117,7 @@ function Signup() {
             <img id='googleimage1' src={img1}  />
             <h2 id='heading'>Create Your Google Account</h2>
             <div className='name-field'>
-                {/* <TextField className='fullname' id="outlined-basic" label="First name" variant="outlined" placeholder='First name' size="small" /> */}
+                
                 <TextField className='fullname'
                 id="outlined-basic"
                 error={regexObj.firstnameBorder}
@@ -127,7 +127,7 @@ function Signup() {
                 helperText={regexObj.firstnameHelper}
                 size='small'
                 />
-                {/* <TextField className='fullname' id="outlined-basic" label="Last name" variant="outlined" placeholder='Last name' size="small" /> */}
+                
                 <TextField className='fullname'
                 id="outlined-basic"
                 error={regexObj.lastnameBorder}
@@ -139,7 +139,7 @@ function Signup() {
                 />
             </div>
             <div>
-                {/* <TextField className='user-name' id="outlined-basic" label="Username" variant="outlined" placeholder='Username' size="small" /> */}
+               
                 <TextField className='user-name'
                 id="outlined-basic"
                 error={regexObj.usernameBorder}
@@ -154,7 +154,7 @@ function Signup() {
             </div>
             <div>
                 <div className='password'>
-                    {/* <TextField className='password-div' id="outlined-basic" label="Password" variant="outlined" placeholder='Password' size="small" /> */}
+                    
                     <TextField className='password-div'
                     id="outlined-basic"
                     error={regexObj.passwordBorder}

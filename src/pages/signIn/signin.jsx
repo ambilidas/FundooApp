@@ -6,7 +6,7 @@ import img1 from './GoogleImage.jpg'
 
 import {SignIn} from '../../services/Userservice'
 
-const emailRegex = /^[a-zA-Z]+[a-zA-Z0-9]*[- . + _]?[a-zA-Z0-9]+[@]{1}[a-z0-9]+[.]{1}[a-z]+[.]?[a-z]+$/
+const emailRegex = /^[a-zA-Z]+[a-zA-Z0-9]*[- . + _]?[a-zA-Z0-9]+[@]{1}[a-z0-9]+[.]{1}[a-z]+[.]?[a-z]+$/;
 const passwordRegex = /^(?=.*[A-Z])(?=.*[0-9])(?=.*[@#$%^&-+=()])([a-zA-Z0-9]*).{8,}$/;
 
 
@@ -71,7 +71,7 @@ function Signin() {
         <p className='use-google'>Use your Google Account </p>
       
       
-          {/* <TextField className='textfield' id="outlined-basic" label="Email or phone" variant="outlined" placeholder='Email or phone' size='small' /> */}
+          
           
           <TextField className='textfield'
           id="outlined-basic"
@@ -83,7 +83,7 @@ function Signin() {
           size='small'/>
             <p className='forgot-email'>Forgot email?</p>
           
-          {/* <TextField className='textfield' id="outlined-basic" label="Password" variant="outlined" placeholder='Password' size='small' /> */}
+         
           <TextField className='textfield'
           id="outlined-basic"
           error={regexObj.passwordBorder}
@@ -96,7 +96,7 @@ function Signin() {
      
       <div className='sub-box3'>
           <p className='textarea'>Not your computer? Use Guest mode to sign in privately.<br/><span id='learn-more'>Learn more</span></p>
-          {/* <p className='learn-more'>Learn more</p> */}
+          
         </div>
         <div className='button-box'>
             <p className='create-account'>Create account</p>
