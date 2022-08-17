@@ -13,6 +13,8 @@ import { addNote } from '../../services/Dataservice'
 import ColorPopper from '../colorPopper/ColorPopper'
 import { ClickAwayListener } from '@mui/material'
 
+export const UserContext = React.createContext
+export const ChannelContext = React.createContext
 
 function Takenotetwo(props) {
     const[takeNote2Obj, setTakeNote2Obj] = useState({title: '', description: '',color: '',isArchived: false});
@@ -53,7 +55,11 @@ function Takenotetwo(props) {
                 <div className='imgBlock1'>
                     <AddAlertIcon />
                     <GroupAddOutlinedIcon />
-                    <ColorPopper takeColor={takeColor} action="create" />
+                    {/* <UserContext.Provider takeColor={takeColor}   >
+                    <ChannelContext.Provider action="create" > */}
+                     <ColorPopper takeColor={takeColor} action="create"/>
+                    {/* </ChannelContext.Provider>
+                    </UserContext.Provider> */}
                     <ImageOutlinedIcon />
                     
                     <ArchiveOutlinedIcon />

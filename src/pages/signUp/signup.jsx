@@ -21,6 +21,7 @@ function Signup() {
         lastNameHelper: "",
     });
     const [signupObj, setSignupObj] = React.useState({ firstName: "", lastName: "",email: "" , password: "",service:"advance"});
+
     const takeFirstname = (event) => {
         setSignupObj((prevState) => ({ ...prevState, firstName: event.target.value }));
       };
@@ -47,6 +48,7 @@ function Signup() {
         let lastnameTest = lastNameRegex.test(signupObj.lastName);
         let usernameTest = emailRegex.test(signupObj.email);
         let passwordTest = passwordRegex.test(signupObj.password);
+        
         if (firstnameTest === false) {
           setRegexObj((prevState) => ({
             ...prevState,

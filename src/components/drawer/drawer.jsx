@@ -24,6 +24,7 @@ import ArchiveOutlinedIcon from '@mui/icons-material/ArchiveOutlined';
 import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
 import NotificationsNoneIcon from '@mui/icons-material/NotificationsNone';
 import ModeEditIcon from '@mui/icons-material/ModeEdit';
+import {connect} from 'react-redux';
 
 const drawerWidth = 240;
 
@@ -92,125 +93,74 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
   }),
 );
 
-export default function SideDrawer({open,listenToSideNav}) {
+ function SideDrawer(props) {
+
   const theme = useTheme();
- 
+
+  const handleNotes = (typeOfNote) => {
+    
+    props.dispatch({type : `${typeOfNote}`})
+    props.listenToSideNav(typeOfNote);
+  };
 
   
 
   return (
     <Box sx={{ display: 'flex' }}>
       
-      <Drawer variant="permanent" open={open}>
+      <Drawer variant="permanent" open={props.drawerOpen}>
         
         <List>
         
-            <ListItem  disablePadding sx={{ display: 'block' }}>
-              <ListItemButton
-                sx={{
-                  minHeight: 48,
-                  justifyContent: open ? 'initial' : 'center',
-                  px: 2.5,
-                }}
-                onClick={() => listenToSideNav('notes')}
-              >
-                <ListItemIcon
-                  sx={{
-                    minWidth: 0,
-                    mr: open ? 3 : 'auto',
-                    justifyContent: 'center',
-                  }}
-                >
-                <LightbulbOutlinedIcon /> 
+            <ListItem  disablePadding sx={{ display: 'block' }} >
+              <ListItemButton onClick={() => handleNotes('notes')}>
+                <ListItemIcon>
+                <LightbulbOutlinedIcon />
                 </ListItemIcon>
-                <ListItemText primary={'Notes'} sx={{ opacity: open ? 1 : 0 }} />
+                <ListItemText primary={'Notes'} />
               </ListItemButton>
             </ListItem>
 
             <ListItem  disablePadding sx={{ display: 'block' }}>
-              <ListItemButton
-                sx={{
-                  minHeight: 48,
-                  justifyContent: open ? 'initial' : 'center',
-                  px: 2.5,
-                }}
-              >
-                <ListItemIcon
-                  sx={{
-                    minWidth: 0,
-                    mr: open ? 3 : 'auto',
-                    justifyContent: 'center',
-                  }}
-                >
+              <ListItemButton onClick={() => handleNotes('reminders')}>
+                <ListItemIcon>
                 <NotificationsNoneIcon /> 
                 </ListItemIcon>
-                <ListItemText primary={'Reminders'} sx={{ opacity: open ? 1 : 0 }} />
+                <ListItemText primary={'Reminders'}  />
               </ListItemButton>
             </ListItem>
 
             <ListItem  disablePadding sx={{ display: 'block' }}>
-              <ListItemButton
-                sx={{
-                  minHeight: 48,
-                  justifyContent: open ? 'initial' : 'center',
-                  px: 2.5,
-                }}
-              >
-                <ListItemIcon
-                  sx={{
-                    minWidth: 0,
-                    mr: open ? 3 : 'auto',
-                    justifyContent: 'center',
-                  }}
-                >
+              <ListItemButton onClick={() => handleNotes('edit')}>
+                <ListItemIcon>
                 <ModeEditIcon /> 
                 </ListItemIcon>
-                <ListItemText primary={'Edit labels'} sx={{ opacity: open ? 1 : 0 }} />
+                <ListItemText primary={'Edit labels'} />
               </ListItemButton>
             </ListItem>
 
             <ListItem  disablePadding sx={{ display: 'block' }}>
-              <ListItemButton
-                sx={{
-                  minHeight: 48,
-                  justifyContent: open ? 'initial' : 'center',
-                  px: 2.5,
-                }}
-                onClick={() => {listenToSideNav('archive')}}
+              <ListItemButton onClick={() => {handleNotes('archive')}}>
            
-              >
-                <ListItemIcon
-                  sx={{
-                    minWidth: 0,
-                    mr: open ? 3 : 'auto',
-                    justifyContent: 'center',
-                  }}
-                >
+              
+                <ListItemIcon>
+                
+                
                 <ArchiveOutlinedIcon /> 
                 </ListItemIcon>
-                <ListItemText primary={'Archive'} sx={{ opacity: open ? 1 : 0 }} />
+                <ListItemText primary={'Archive'}  />
               </ListItemButton>
             </ListItem>
          
             <ListItem  disablePadding sx={{ display: 'block' }}>
-              <ListItemButton
-                sx={{
-                  minHeight: 48,
-                  justifyContent: open ? 'initial' : 'center',
-                  px: 2.5,
-                }}
-                onClick={() => listenToSideNav('trash')}
+              <ListItemButton onClick={() => handleNotes('trash')}
               >
                 <ListItemIcon
-                  sx={{
-                    minWidth: 0,
-                    mr: open ? 3 : 'auto',
-                    justifyContent: 'center',
-                  }}
+                
                 >
                 <DeleteOutlineIcon /> 
                 </ListItemIcon>
-                <ListItemText primary={'Trash'} sx={{ opacity: open ? 1 : 0 }} />
+                <ListItemText primary={'Trash'}  />
               </ListItemButton>
             </ListItem>
          
@@ -224,3 +174,4 @@ export default function SideDrawer({open,listenToSideNav}) {
     </Box>
   );
 }
+export default connect()(SideDrawer);

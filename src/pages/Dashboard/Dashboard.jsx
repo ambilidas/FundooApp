@@ -11,7 +11,7 @@ import { useState } from 'react'
 function Dashboard() {
   const [notes,setNotes] = React.useState([])
   const [view,setView] = React.useState(true)
-  const [open, setOpen] = React.useState(false);
+  const [drawerOpen, setDrawerOpen] = React.useState(false);
   const [noteType,setNoteType] = useState('notes')
   
   const GetNotes= () => {
@@ -48,7 +48,7 @@ function Dashboard() {
     
     
   }
-  React.useEffect(() => {GetNotes()}, [noteType])
+  React.useEffect(() => {GetNotes()}, [view,noteType])
     
 
   
@@ -61,10 +61,10 @@ function Dashboard() {
 }
 
   const listenToHeader = () => {
-    setOpen(!open)
+    setDrawerOpen(!drawerOpen)
   }
-  const listenToSideNav = (value) => {
-    setNoteType(value)
+  const listenToSideNav = (noteChoice) => {
+    setNoteType(noteChoice)
   }
 
   const mapNotes = notes.map((note,index) => <Takenotethree key={index} note={note} getNotes={GetNotes} />)
@@ -72,7 +72,7 @@ function Dashboard() {
    return (
     <div className='maindiv-dashboard'>
         <div className='dashboard-header'><Header listenToHeader={listenToHeader} /></div>
-        <SideDrawer open={open} listenToSideNav={listenToSideNav} />
+        <SideDrawer drawerOpen={drawerOpen} listenToSideNav={listenToSideNav} />
         <div>
            {view ? <div className='subDiv-takenote1'><Takenoteone takeNoteOne={takeNoteOne}/></div> : <div className='subDiv-takenote2'><Takenotetwo getNotes={GetNotes} takeNoteTwo={takeNoteTwo}/></div>}
         </div>

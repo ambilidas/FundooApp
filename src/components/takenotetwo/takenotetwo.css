@@ -2,6 +2,7 @@
     width: 40vw;
     height: 20vh;
     border: 1px solid grey;
+    border-radius: 10px;
     margin: auto;
     display: flex;
     flex-direction: column;

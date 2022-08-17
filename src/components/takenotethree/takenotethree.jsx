@@ -58,9 +58,13 @@ function Takenotethree(props) {
     console.log(note)
     setEditNotes(note)
     setOpen(true);
+   
     
   } 
-  const handleClose = () => setOpen(false);
+  const handleClose = () =>setOpen(false);
+    
+   
+  
 
   const takeTitleEditNotes = (event) => {
     setEditNotes((prevState) => ({...prevState,title: event.target.value}));

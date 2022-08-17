@@ -1,3 +1,7 @@
+* {
+    margin: 0;
+    padding: 0;
+}
 .maindiv-dashboard {
     width: 100vw;
    min-height: 100vh;
@@ -33,89 +37,22 @@
     justify-content: center;
    
     
-   
-    
-    
 }
 .dashboard-header {
     width: 100%;
 }
 @media screen and (min-width: 320px) and (max-width: 600px) {
  
-   /* header classes */
-    .subBox2 {
-        display: none;
-    }
-    .subBox1 {
-       
-        width: 40%;
-        margin-left: 20px;
-        gap: 5px;
-    }
-    .subBox3 {
-        width: 25%;
-        padding-right: 20px;
-        
-        gap: 5px;
-    } 
-    .subBox4 {
-        width: 10%;
-        
-        
-       
-    }
-
-    .mainDiv {
-        width: 100%;
-
-    }
-    .MainDiv {
-        width: 100%;
-    }
-    #btn {
-        position: relative;
-        top: 15px;
-    }
-    .main-box-note3 {
-        width: 90vw;
-    }
-   
-    
-    .takenote3 {
+   .takenote3 {
         margin-top: 25px;
     }
    
    
 }
 @media screen and (min-width: 601px) and (max-width: 860px) {
-    .subBox2 {
-        display: none;
-    }
-    .subBox1 {
-        width: 35%;
-        
-        
-    }
-    .subBox3 {
-        width: 30%;
-        
-        
-    }
-    .subBox4 {
-        width: 15%;
-        
-        
-    }
-    .mainDiv {
-        width: 80%;
-
-    }
-    .main-box-note3 {
-        width: 30vw;
-    }
-    .MainDiv {
-        width: 100%
-    }
+    
+    
+    
     .takenote3 {
         margin-top: 25px;
     }

@@ -7,16 +7,19 @@ import Header from './components/header/header';
 import Takenoteone from './components/takenoteone/takenoteone';
 // import Takenotetwo from './components/takenotetwo/takenotetwo';
 import Dashboard from './pages/Dashboard/Dashboard';
+import Router from './components/router/router';
+import store from './components/redux/store';
+import { Provider } from 'react-redux';
 
 function App() {
   return (
     <div className="App">
-      <Dashboard />
-      {/* <Takenotetwo /> */}
-      {/* <Takenoteone /> */}
-      {/* <Header /> */}
-      {/* <Signup /> */}
-      {/* <Signin /> */}
+      
+        <Provider store = {store} >
+
+        <Router />
+         
+        </Provider>
     </div>
 
   );

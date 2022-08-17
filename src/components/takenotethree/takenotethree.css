@@ -9,6 +9,8 @@
     flex-direction: column;
     align-items: center;
     margin:20px;
+    border-radius: 10px;
+
 }
 .title-box-note3 {
     width: 90%;

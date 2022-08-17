@@ -9,13 +9,20 @@ import SettingsIcon from '@mui/icons-material/Settings';
 import AppsIcon from '@mui/icons-material/Apps';
 import SearchIcon from '@mui/icons-material/Search';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+import {connect} from 'react-redux';
+
 function Header(props) {
   return (
     <div className='mainBox'>
         <div className='subBox1'>
             <MenuIcon onClick={props.listenToHeader} />
             <img className='img1' src={img2}  />
-            <img className='img1' src={img3}  />
+            <div>
+            {
+             props.title
+            }
+            </div>
+          
         </div>
         
         <div className='subBox2'>
@@ -37,4 +44,10 @@ function Header(props) {
   )
 }
 
-export default Header
+const mapStateToProps = (state) => {
+    console.log(state)
+    return {
+        title: state.drawerReducer.title,
+    };
+};
+export default connect(mapStateToProps)(Header);

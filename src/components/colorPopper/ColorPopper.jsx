@@ -6,11 +6,17 @@ import './ColorPopper.css'
 import { color } from '@mui/system';
 import { updateColour } from '../../services/Dataservice';
 
+// import {UserContext,ChannelContext} from '../takenotetwo/takenotetwo'
+
 export default function ColorPopper(props) {
+    // const user = useContext(UserContext)
+    // const channel = useContext(ChannelContext)
+
   const [anchorEl, setAnchorEl] = React.useState(null);
 
   const handleClick = (event) => {
     setAnchorEl(anchorEl ? null : event.currentTarget);
+    
   };
   
   const takeColor = (color) => {
